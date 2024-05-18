@@ -1,11 +1,11 @@
 <template>
-  <div class="p-10 flex flex-col items-center justify-center my-auto h-screen">
+  <div class="container">
     <h1 class="title">NatsLock</h1>
     <div class="grid-container">
       <div 
         v-for="(status, index) in lockerStatuses" 
         :key="index" 
-        class="card h-36" 
+        class="card" 
         :style="{ backgroundColor: status.colorCard, color: status.colorText }"
       >
         <div class="text-3xl">Locker {{ index + 1 }}</div>
@@ -114,7 +114,6 @@ onMounted(() => {
 <style scoped>
 .container {
   width: 100%;
-  height: 100vh;
   padding: 10px;
   box-sizing: border-box;
   display: flex;
@@ -126,8 +125,8 @@ onMounted(() => {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(5, 1fr); /* 5 columns */
+  grid-template-rows: repeat(2, auto); /* 2 rows */
   gap: 10px;
   justify-items: center;
 }
@@ -144,6 +143,7 @@ onMounted(() => {
   transition: transform 0.3s;
   text-align: center;
   white-space: pre-line;
+  width: 100%; /* Ensure cards take full width */
 }
 
 .card:hover {
@@ -156,5 +156,13 @@ onMounted(() => {
   font-size: 2.5rem;
   font-weight: 700;
   color: #fff;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* 1 column on smaller screens */
+    grid-template-rows: auto; /* Auto rows */
+  }
 }
 </style>
