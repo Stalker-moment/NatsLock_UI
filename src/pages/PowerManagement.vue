@@ -210,8 +210,10 @@ export default {
             if (!on) {
                 return {
                     animationDuration: '0s'
-                    // added text blinking "off" red color
-
+                };
+            } else if(speed == 0) {
+                return {
+                    animationDuration: '0s'
                 };
             }
             const duration = 30 / Math.max(speed, 1); // Ensure the speed is at least 1 to avoid division by zero

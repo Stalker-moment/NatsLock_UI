@@ -12,7 +12,7 @@
                 </div>
                 <p class="text-gray-400">Status: <span class="font-semibold">{{ fan1Status ? 'On' : 'Off' }}</span></p>
                 <p class="text-gray-400">Speed: <span class="font-semibold">{{ fan1Speed }}%</span></p>
-                <input type="range" min="1" max="100" v-model="fan1Speed" @change="setFanSpeed(1, fan1Speed)"
+                <input type="range" min="0" max="100" v-model="fan1Speed" @change="setFanSpeed(1, fan1Speed)"
                     class="comslider">
             </div>
             <div class="switch-control space-y-4">
@@ -25,7 +25,7 @@
                 </div>
                 <p class="text-gray-400">Status: <span class="font-semibold">{{ fan2Status ? 'On' : 'Off' }}</span></p>
                 <p class="text-gray-400">Speed: <span class="font-semibold">{{ fan2Speed }}%</span></p>
-                <input type="range" min="1" max="100" v-model="fan2Speed" @change="setFanSpeed(2, fan2Speed)"
+                <input type="range" min="0" max="100" v-model="fan2Speed" @change="setFanSpeed(2, fan2Speed)"
                     class="comslider">
             </div>
         </div>
